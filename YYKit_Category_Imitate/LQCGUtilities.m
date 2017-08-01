@@ -30,3 +30,38 @@ UIViewContentMode LQCAGravityToUIViewContentMode(NSString *gravity) {
     if (!gravity) return UIViewContentModeScaleToFill;
     return (UIViewContentMode)((NSNumber *)dict[gravity]).integerValue;
 }
+
+NSString *LQUIViewContentModeToCAGravity(UIViewContentMode contentMode) {
+    switch (contentMode) {
+        case UIViewContentModeScaleToFill: return kCAGravityResize;
+        case UIViewContentModeScaleAspectFit: return kCAGravityResizeAspect;
+        case UIViewContentModeScaleAspectFill: return kCAGravityResizeAspectFill;
+        case UIViewContentModeRedraw: return kCAGravityResize;
+        case UIViewContentModeCenter: return kCAGravityCenter;
+        case UIViewContentModeTop: return kCAGravityTop;
+        case UIViewContentModeBottom: return kCAGravityBottom;
+        case UIViewContentModeLeft: return kCAGravityLeft;
+        case UIViewContentModeRight: return kCAGravityRight;
+        case UIViewContentModeTopLeft: return kCAGravityTopLeft;
+        case UIViewContentModeTopRight: return kCAGravityTopRight;
+        case UIViewContentModeBottomLeft: return kCAGravityBottomLeft;
+        case UIViewContentModeBottomRight: return kCAGravityBottomRight;
+        default: return kCAGravityResize;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

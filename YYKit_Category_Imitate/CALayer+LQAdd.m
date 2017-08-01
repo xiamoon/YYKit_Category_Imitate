@@ -113,7 +113,37 @@
 }
 
 -(void)setContentMode:(UIViewContentMode)contentMode {
-    //...
+    self.contentsGravity = LQUIViewContentModeToCAGravity(contentMode);
+}
+
+-(void)addFadeAnimationWithDuration:(NSTimeInterval)duration
+                              curve:(UIViewAnimationCurve)curve {
+    if (duration <= 0) return;
+    
+    NSString *mediaFunction;
+    switch (curve) {
+        case UIViewAnimationCurveEaseInOut: {
+            mediaFunction = kCAMediaTimingFunctionEaseInEaseOut;
+        } break;
+        case UIViewAnimationCurveEaseIn: {
+            mediaFunction = kCAMediaTimingFunctionEaseIn;
+        } break;
+        case UIViewAnimationCurveEaseOut: {
+            mediaFunction = kCAMediaTimingFunctionEaseOut;
+        } break;
+        case UIViewAnimationCurveLinear: {
+            mediaFunction = kCAMediaTimingFunctionLinear;
+        } break;
+        default: {
+            mediaFunction = kCAMediaTimingFunctionLinear;
+        } break;
+    }
+    
+    CATransition *transition = [CATransition animation];
+    transition.duration = duration;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:mediaFunction];
+    transition.type = kCATransitionFade;
+    [self addAnimation:transition forKey:@"lqkit.fade"];
 }
 
 

@@ -22,7 +22,7 @@ LQ_EXTERN_C_BEGIN
 NS_ASSUME_NONNULL_BEGIN
 
 UIViewContentMode LQCAGravityToUIViewContentMode(NSString *gravity);
-
+NSString *LQUIViewContentModeToCAGravity(UIViewContentMode contentMode);
 
 
 NS_ASSUME_NONNULL_END

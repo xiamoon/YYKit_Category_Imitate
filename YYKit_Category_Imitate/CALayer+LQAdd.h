@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  Provides extensions for 'CALayer'.
  */
@@ -76,7 +78,21 @@
  */
 @property (nonatomic) UIViewContentMode contentMode;
 
+/**
+ Add a fade animation to layer's contents when the contents is changed.
+ 
+ @param duration Animation duration.
+ @param curve Animation curve.
+ */
+- (void)addFadeAnimationWithDuration:(NSTimeInterval)duration
+                               curve:(UIViewAnimationCurve)curve;
 
-
+/**
+ Cancel fade animation which is add with "-
+    addFadeAnimationWithDuraton:curve:".
+ */
+- (void)removePreviousFadeAnimation;
 
 @end
+
+NS_ASSUME_NONNULL_END
