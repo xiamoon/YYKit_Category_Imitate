@@ -17,6 +17,9 @@
 		542707531F2F41DB009006D1 /* YYKit_Category_ImitateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 542707521F2F41DB009006D1 /* YYKit_Category_ImitateUITests.m */; };
 		542707621F2F41FF009006D1 /* CALayer+LQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 542707611F2F41FF009006D1 /* CALayer+LQAdd.m */; };
 		542707651F2F772F009006D1 /* LQCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 542707641F2F772F009006D1 /* LQCGUtilities.m */; };
+		542707681F3029F0009006D1 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 542707661F3029F0009006D1 /* 1.jpg */; };
+		542707691F3029F0009006D1 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 542707671F3029F0009006D1 /* 2.jpg */; };
+		5427076C1F304D9E009006D1 /* NSArray+LQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 5427076B1F304D9E009006D1 /* NSArray+LQAdd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,10 @@
 		542707611F2F41FF009006D1 /* CALayer+LQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LQAdd.m"; sourceTree = "<group>"; };
 		542707631F2F772F009006D1 /* LQCGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQCGUtilities.h; sourceTree = "<group>"; };
 		542707641F2F772F009006D1 /* LQCGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQCGUtilities.m; sourceTree = "<group>"; };
+		542707661F3029F0009006D1 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		542707671F3029F0009006D1 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		5427076A1F304D9E009006D1 /* NSArray+LQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+LQAdd.h"; sourceTree = "<group>"; };
+		5427076B1F304D9E009006D1 /* NSArray+LQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+LQAdd.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +120,8 @@
 				542707341F2F41DA009006D1 /* ViewController.m */,
 				542707601F2F41FF009006D1 /* CALayer+LQAdd.h */,
 				542707611F2F41FF009006D1 /* CALayer+LQAdd.m */,
+				5427076A1F304D9E009006D1 /* NSArray+LQAdd.h */,
+				5427076B1F304D9E009006D1 /* NSArray+LQAdd.m */,
 				542707631F2F772F009006D1 /* LQCGUtilities.h */,
 				542707641F2F772F009006D1 /* LQCGUtilities.m */,
 				542707361F2F41DA009006D1 /* Main.storyboard */,
@@ -127,6 +136,8 @@
 		5427072D1F2F41DA009006D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				542707661F3029F0009006D1 /* 1.jpg */,
+				542707671F3029F0009006D1 /* 2.jpg */,
 				5427072E1F2F41DA009006D1 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -260,6 +271,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5427073D1F2F41DA009006D1 /* LaunchScreen.storyboard in Resources */,
+				542707681F3029F0009006D1 /* 1.jpg in Resources */,
+				542707691F3029F0009006D1 /* 2.jpg in Resources */,
 				5427073A1F2F41DA009006D1 /* Assets.xcassets in Resources */,
 				542707381F2F41DA009006D1 /* Main.storyboard in Resources */,
 			);
@@ -291,6 +304,7 @@
 				542707321F2F41DA009006D1 /* AppDelegate.m in Sources */,
 				542707651F2F772F009006D1 /* LQCGUtilities.m in Sources */,
 				5427072F1F2F41DA009006D1 /* main.m in Sources */,
+				5427076C1F304D9E009006D1 /* NSArray+LQAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +544,7 @@
 				542707591F2F41DB009006D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5427075A1F2F41DB009006D1 /* Build configuration list for PBXNativeTarget "YYKit_Category_ImitateTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +553,7 @@
 				5427075C1F2F41DB009006D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5427075D1F2F41DB009006D1 /* Build configuration list for PBXNativeTarget "YYKit_Category_ImitateUITests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +562,7 @@
 				5427075F1F2F41DB009006D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

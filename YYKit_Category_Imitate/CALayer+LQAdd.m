@@ -78,12 +78,12 @@
 }
 
 -(CGFloat)transformScaleX {
-    NSNumber *v = [self valueForKeyPath:@"transform.rotation.x"];
+    NSNumber *v = [self valueForKeyPath:@"transform.scale.x"];
     return v.doubleValue;
 }
 
--(void)setTransformRotationX:(CGFloat)v {
-    [self setValue:@(v) forKeyPath:@"transform.rotation.x"];
+-(void)setTransformScaleX:(CGFloat)v {
+    [self setValue:@(v) forKeyPath:@"transform.scale.x"];
 }
 //...
 
@@ -145,13 +145,5 @@
     transition.type = kCATransitionFade;
     [self addAnimation:transition forKey:@"lqkit.fade"];
 }
-
-
-
-
-
-
-
-
 
 @end
