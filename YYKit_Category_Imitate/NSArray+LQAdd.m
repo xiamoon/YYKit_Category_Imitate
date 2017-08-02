@@ -38,9 +38,45 @@
     NSData *xmlData = [self plistData];
     if (xmlData) {
         if (xmlData.length) {
-            return []
+            return [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding];
+        }else return @"";
+    }
+    return nil;
+}
+
+-(id)randomObject {
+    if (self.count) {
+        return self[arc4random_uniform((u_int32_t)self.count)];
+    }
+    return nil;
+}
+
+-(id)objectOrNilAtIndex:(NSUInteger)index {
+    return index < self.count ? self[index] : nil;
+}
+
+-(NSString *)jsonStringEncoded {
+    if ([NSJSONSerialization isValidJSONObject:self]) {
+        NSError *error = nil;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:0 error:&error];
+        NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        if (!error) {
+            return json;
         }
     }
+    return nil;
+}
+
+-(NSString *)jsonPrettyStringEncoded {
+    if ([NSJSONSerialization isValidJSONObject:self]) {
+        NSError *error = nil;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&error];
+        NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        if (!error) {
+            return json;
+        }
+    }
+    return nil;
 }
 
 @end

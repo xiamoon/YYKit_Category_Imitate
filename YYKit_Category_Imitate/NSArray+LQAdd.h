@@ -45,12 +45,32 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable NSString *)plistString;
 
+/**
+ Returns the object located at a random index.
+ 
+ @return The object in the array with a random index value.
+ If the array is empty, returns nil.
+ */
+- (nullable id)randomObject;
 
+/**
+ Return the object located at index, or return nil when out of bounds.
+ It's similar to 'objectAtIndex:', but it never throw exception.
+ 
+ @param index The object located at index.
+ */
+- (nullable id)objectOrNilAtIndex:(NSUInteger)index;
 
+/**
+ Convert object to json string. return nil if an error occurs.
+ NSString/NSNumber/NSDictionary/NSArray
+ */
+- (nullable NSString *)jsonStringEncoded;
 
-
-
-
+/**
+ Convert object to json string formatted. return nil if an error occurs.
+ */
+- (nullable NSString *)jsonPrettyStringEncoded;
 
 @end
 
