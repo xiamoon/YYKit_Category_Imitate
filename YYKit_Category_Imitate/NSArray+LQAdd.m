@@ -80,3 +80,56 @@
 }
 
 @end
+
+
+@implementation NSMutableArray (LQAdd)
+
++ (NSMutableArray *)arrayWithPlistData:(NSData *)plist {
+    if (!plist) return nil;
+    NSMutableArray *array = [NSPropertyListSerialization propertyListWithData:plist
+                                                                      options:NSPropertyListMutableContainersAndLeaves format:NULL error:NULL];
+    if ([array isKindOfClass:[NSMutableArray class]]) return array;
+    return nil;
+}
+
++ (NSMutableArray *)arrayWithPlistString:(NSString *)plist {
+    if (!plist) return nil;
+    NSData *data = [plist dataUsingEncoding:NSUTF8StringEncoding];
+    return [self arrayWithPlistData:data];
+}
+
+- (void)removeFirstObject {
+    if (self.count) {
+        [self removeObjectAtIndex:0];
+    }
+}
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+- (void)removeLastObject {
+    if (self.count) {
+        [self removeObjectAtIndex:self.count-1];
+    }
+}
+#pragma clang diagnostic pop
+
+- (id)popFirstObject {
+    id obj = nil;
+    if (self.count) {
+        obj = self.firstObject;
+        [self removeObjectAtIndex:0];
+    }
+    return obj;
+}
+
+- (id)popLastObject {
+    id obj = nil;
+    if (self.count) {
+        obj = self.lastObject;
+        [self removeObjectAtIndex:self.count-1];
+    }
+    return obj;
+}
+
+@end
+

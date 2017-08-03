@@ -74,4 +74,44 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+
+/**
+ Provide some commom method for 'NSMutableArray'.
+ */
+@interface NSMutableArray (LQAdd)
+
+/**
+ Create and returns an array from a specified property list data.
+ 
+ @param plist A property list data whose root object is an array.
+ @return A new array created from the binary plist data, or nil if an error occurs.
+ */
++ (nullable NSMutableArray *)arrayWithPlistData:(NSData *)plist;
+
+/**
+ Create and returns an array from a specified property list xml string.
+ 
+ @param plist A property list xml string whose root object is an array.
+ @return A new array created from the plist string, or nil if an error occurs.
+ */
++ (nullable NSMutableArray *)arrayWithPlistString:(NSString *)plist;
+
+- (void)removeFirstObject;
+
+- (void)removeLastObject;
+
+/**
+ Remove and returns the object with the highest-valued index in the array.
+ If the array is empty, it just returns nil.
+ 
+ @return  The first object, or nil.
+ */
+- (nullable id)popFirstObject;
+
+- (nullable id)popLastObject;
+
+@end
+
+
+
 NS_ASSUME_NONNULL_END
